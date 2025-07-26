@@ -1,0 +1,216 @@
+
+
+body {
+   
+  margin: 0;
+  font-family: 'PT Sans Narrow', sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+  margin-left: 300px;
+}
+
+ 
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px; /* تقدر تغير العرض */
+  height: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+color: white;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.sidebar-logo img {
+    width: 50px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  margin-left: 28px;
+  color: #ffffff; /* لون ذهبي */
+}
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+.sidebar-menu a >span{
+    color: white;
+}
+.sidebar-menu a >i{
+    color: white;
+}
+.sidebar-menu a:hover {
+  background-color: #302e2e;
+}
+
+.insta-header {
+
+  padding: 20px;
+ 
+}
+
+.profile {
+    width: 122px;
+    height: 122px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(45deg, #feda75,#fa7e1e, #d62976,#962fbf,#4f5bd5);
+ justify-content: center;
+    display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 30px;
+  margin-left: 396.3px;
+}
+
+
+.profile-info h2 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.profile-info h2>span>button{
+    color: white;
+    background-color: #1f2438;
+    padding: 5px 11px;
+    border-radius: 8px;
+margin-left: 2px;
+}
+.profile-info h2>span>button:hover{
+    background-color: rgb(58, 62, 61);
+}
+.bio {
+    padding: 0 ;
+  margin: -35px 180px;
+  margin-bottom: 80px;
+  font-size: 17px;
+  color: #ffffff;
+}
+
+.stats {
+    margin-top: 17px;
+    margin: 15px;
+  display: flex;
+  gap: 20px;
+  font-size: 17px;
+  padding: 5px;
+}
+
+.stats div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.stats div>span{
+    color: #605d5d;
+}
+.highlights {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.highlight-item {
+  text-align: center;
+}
+
+.highlight-item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #3f3b33; /* لون ذهبي */
+}
+
+.highlight-item p {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #ffffff;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 240px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 10px 0;
+}
+
+.profile-tabs a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.profile-tabs a i {
+  font-size: 18px;
+}
+
+.profile-tabs a:hover {
+  color: #ffffff; /* لون ذهبي عند الهوفر */
+}
+
+#profile-tabs a.active{
+  color: #f9f8f8;
+
+}
+
+
+.gallery {
+    
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+ gap: 5px;
+  margin-top: 10px;
+  margin-right: 60px;
+}
+
+.gallery img {
+  width: 99%;
+  object-fit: cover 50%;
+  height: 550px;
+}
+
+.footer { display: flex; justify-content: space-between;
+
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #999;
+}
+
