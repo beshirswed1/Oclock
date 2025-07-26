@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background: #111;
+        color: #fff;
+        }
+
+        header {
+        background-color: #222;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 2px solid gold;
+        }
+
+        header h1 {
+        font-family: 'Playfair Display', serif;
+        color: gold;
+        font-size: 2.5rem;
+        margin: 0;
+        animation: fadeIn 2s ease-in-out;
+        }
+
+        .account-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 50px;
+        flex-wrap: wrap;
+        }
+
+        .card {
+        background: #1c1c1c;
+        padding: 30px;
+        border: 1px solid #333;
+        border-radius: 12px;
+        width: 300px;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+
+        .card i {
+        font-size: 40px;
+        color: gold;
+        margin-bottom: 15px;
+        }
+
+        .card h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        color: #ffd700;
+        }
+
+        .card p {
+        font-size: 0.95rem;
+        color: #ccc;
+        line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px);}
+        to { opacity: 1; transform: translateY(0);}
+        }
+    </style>
+    </head>
+    <body>
+
+    <header>
+    <h1><i class="fas fa-user-circle"></i> Your Account</h1>
+    </header>
+
+    <div class="account-container">
+    <div class="card">
+        <i class="fas fa-user"></i>
+        <h2>Profile Info</h2>
+        <p>View and update your personal details, such as name, email, and password. Stay up to date with your preferences.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-box-open"></i>
+        <h2>Order History</h2>
+        <p>See your recent purchases, download invoices, and track the status of current orders directly from your dashboard.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-heart"></i>
+        <h2>Wishlist</h2>
+        <p>Save your favorite watches and accessories in one place. Create your dream collection with ease.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-cog"></i>
+        <h2>Settings</h2>
+        <p>Manage your language preferences, notifications, and account security settings to enhance your experience.</p>
+    </div>
+
+    <div class="card">
+        <i class="fas fa-sign-out-alt"></i>
+        <h2>Logout</h2>
+        <p>Securely log out of your account with one click. Your data remains protected and synced for your next visit.</p>
+    </div>
+    </div>
+
+    <script>
+    // Example: alert on profile click
+    document.querySelector('.card:nth-child(1)').addEventListener('click', () => {
+        alert("Redirecting to your profile...");
+    });
+    </script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6c9e2bc12c.js" crossorigin="anonymous"></script>
+    </body>
+    </html>

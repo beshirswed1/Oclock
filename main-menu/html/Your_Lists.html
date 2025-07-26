@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Lists</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+
+    header {
+      background-color: #000;
+      color: gold;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 2px 15px rgba(255, 215, 0, 0.2);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 10px;
+    }
+
+    nav button {
+      background-color: transparent;
+      border: 1px solid gold;
+      color: gold;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 6px;
+    }
+
+    nav button:hover {
+      background-color: gold;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .list-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .list-item {
+      background-color: #222;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .list-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.3);
+    }
+
+    .list-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .list-info {
+      padding: 15px;
+    }
+
+    .list-info h3 {
+      margin: 0;
+      color: gold;
+    }
+
+    .list-info p {
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Your Lists
+</header>
+
+<nav>
+  <button onclick="filterList('wishlist')">Wishlist</button>
+  <button onclick="filterList('favorites')">Favorites</button>
+  <button onclick="filterList('watchlater')">Watch Later</button>
+</nav>
+
+<div class="list-container" id="listContainer">
+  <!-- Items will be inserted by JavaScript -->
+</div>
+
+<footer>
+  © 2025 O-Oclock. All rights reserved.
+</footer>
+
+<script>
+  const products = [
+    { id: 1, name: "Rolex Submariner", desc: "A classic diver's watch.", type: "wishlist", img: "https://i.imgur.com/a1vLsOU.jpg" },
+    { id: 2, name: "Omega Speedmaster", desc: "Legendary moon watch.", type: "favorites", img: "https://i.imgur.com/XA1iNka.jpg" },
+    { id: 3, name: "G-Shock Mudmaster", desc: "Built for the extreme.", type: "watchlater", img: "https://i.imgur.com/oC7nFgf.jpg" },
+    { id: 4, name: "Seiko 5 Sports", desc: "Reliable and affordable.", type: "wishlist", img: "https://i.imgur.com/U3LEm6y.jpg" },
+    { id: 5, name: "Tag Heuer Carrera", desc: "Inspired by racing heritage.", type: "favorites", img: "https://i.imgur.com/Y7T7VKd.jpg" },
+    { id: 6, name: "Garmin Instinct", desc: "GPS and heart rate tracking.", type: "watchlater", img: "https://i.imgur.com/cRPYBhz.jpg" },
+    { id: 7, name: "Casio Edifice", desc: "Sporty and sleek.", type: "wishlist", img: "https://i.imgur.com/qJx2QoK.jpg" },
+    { id: 8, name: "Fossil Gen 6", desc: "Smartwatch with style.", type: "favorites", img: "https://i.imgur.com/VRucjcz.jpg" },
+    { id: 9, name: "Tissot PRX", desc: "Elegant integrated bracelet.", type: "watchlater", img: "https://i.imgur.com/XEMGpi9.jpg" }
+  ];
+
+  function filterList(type) {
+    const container = document.getElementById("listContainer");
+    container.innerHTML = "";
+
+    const filtered = products.filter(p => p.type === type);
+
+    if (filtered.length === 0) {
+      container.innerHTML = `<p style="color:#aaa; text-align:center; grid-column: 1/-1;">No items in this list.</p>`;
+      return;
+    }
+
+    filtered.forEach(product => {
+      const div = document.createElement("div");
+      div.className = "list-item";
+      div.innerHTML = `
+        <img src="${product.img}" alt="${product.name}">
+        <div class="list-info">
+          <h3>${product.name}</h3>
+          <p>${product.desc}</p>
+        </div>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  // Load default list
+  filterList("wishlist");
+</script>
+
+</body>
+</html>
