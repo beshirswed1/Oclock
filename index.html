@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاري تحويلك إلى الموقع...</title>
+    <!-- Meta Refresh: التحويل التلقائي الأساسي -->
+    <meta http-equiv="refresh" content="5; url=main-menu/index.html">
+
+    <!-- Tailwind CSS CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Cairo for Arabic elegance -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Base styles for the body and font */
+        body {
+            font-family: 'Cairo', sans-serif; /* استخدام خط القاهرة لجمالية اللغة العربية */
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); /* خلفية متدرجة داكنة وجذابة */
+            color: #e2e8f0; /* لون نص فاتح للتباين */
+            display: flex; /* لتمكين التوسيط الرأسي والأفقي */
+            justify-content: center; /* توسيط أفقي */
+            align-items: center; /* توسيط رأسي */
+            min-height: 100vh; /* جعل الصفحة تأخذ كامل ارتفاع الشاشة */
+            margin: 0; /* إزالة الهوامش الافتراضية */
+            overflow: hidden; /* إخفاء أي شريط تمرير غير مرغوب فيه */
+            position: relative; /* لتحديد موضع العناصر المطلقة */
+        }
+
+        /* Overlay for subtle background animation */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(66, 153, 225, 0.1) 0%, transparent 70%); /* تأثير ضوئي خفيف */
+            animation: pulseBackground 10s infinite alternate ease-in-out; /* حركة خلفية نابضة */
+            z-index: -1; /* وضعه خلف المحتوى */
+        }
+
+        /* Keyframe animation for background pulse */
+        @keyframes pulseBackground {
+            0% { transform: scale(1); opacity: 0.1; }
+            100% { transform: scale(1.1); opacity: 0.2; }
+        }
+
+        /* Main container styling */
+        .container {
+            background-color: rgba(30, 41, 59, 0.85); /* خلفية شبه شفافة للبطاقة */
+            border-radius: 1.5rem; /* حواف دائرية كبيرة */
+            padding: 3rem; /* مسافة داخلية كبيرة */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* ظل عميق وواضح */
+            text-align: center; /* توسيط المحتوى النصي */
+            max-width: 90%; /* أقصى عرض على الشاشات الصغيرة */
+            width: 600px; /* عرض ثابت على الشاشات الكبيرة */
+            animation: fadeInScale 1s ease-out forwards; /* تأثير ظهور وتكبير عند التحميل */
+            border: 1px solid rgba(74, 85, 104, 0.5); /* حدود خفيفة */
+            backdrop-filter: blur(8px); /* تأثير ضبابي للخلفية */
+        }
+
+        /* Keyframe animation for container fade-in and scale */
+        @keyframes fadeInScale {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* Heading animation */
+        .heading-text {
+            animation: slideInFromTop 0.8s ease-out forwards; /* تأثير دخول من الأعلى */
+            animation-delay: 0.2s; /* تأخير بسيط للظهور */
+            opacity: 0; /* مخفي بالبداية */
+        }
+
+        /* Keyframe animation for heading slide-in */
+        @keyframes slideInFromTop {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Spinner animation */
+        .spinner {
+            border: 6px solid rgba(255, 255, 255, 0.2); /* حدود السبينر */
+            border-top: 6px solid #4299e1; /* لون الجزء المتحرك من السبينر */
+            border-radius: 50%; /* لجعلها دائرة */
+            width: 60px; /* عرض السبينر */
+            height: 60px; /* ارتفاع السبينر */
+            animation: spin 1.2s linear infinite; /* حركة دوران مستمرة */
+            margin: 2rem auto; /* توسيط السبينر مع مسافة */
+            opacity: 0; /* مخفي بالبداية */
+            animation: fadeIn 0.8s ease-out forwards; /* تأثير ظهور */
+            animation-delay: 0.5s; /* تأخير بسيط */
+        }
+
+        /* Keyframe animation for spinner spin */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Keyframe animation for general fade-in */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Progress bar styling */
+        .progress-bar-container {
+            width: 80%; /* عرض شريط التقدم */
+            height: 12px; /* ارتفاع شريط التقدم */
+            background-color: #4a5568; /* لون خلفية شريط التقدم */
+            border-radius: 6px; /* حواف دائرية */
+            margin: 2rem auto 1.5rem; /* توسيط مع مسافات */
+            overflow: hidden; /* إخفاء أي تجاوز */
+            opacity: 0; /* مخفي بالبداية */
+            animation: fadeIn 0.8s ease-out forwards; /* تأثير ظهور */
+            animation-delay: 0.8s; /* تأخير */
+        }
+
+        .progress-bar-fill {
+            height: 100%; /* ارتفاع الملء */
+            width: 0%; /* يبدأ من صفر */
+            background-color: #4299e1; /* لون ملء شريط التقدم */
+            border-radius: 6px; /* حواف دائرية */
+            transition: width 0.1s linear; /* حركة سلسة للملء */
+        }
+
+        /* Manual link styling */
+        .manual-link-container {
+            opacity: 0; /* مخفي بالبداية */
+            animation: fadeIn 0.8s ease-out forwards; /* تأثير ظهور */
+            animation-delay: 1.2s; /* تأخير أطول */
+        }
+
+        .manual-link {
+            color: #63b3ed; /* لون أزرق فاتح للرابط */
+            text-decoration: none; /* إزالة خط التسطير */
+            font-weight: bold; /* نص سميك */
+            transition: color 0.3s ease; /* حركة سلسة لتغيير اللون */
+        }
+
+        .manual-link:hover {
+            color: #3182ce; /* لون أزرق أغمق عند التمرير */
+            text-decoration: underline; /* إضافة خط تسطير عند التمرير */
+        }
+
+        /* Footer styling */
+        footer {
+            position: absolute; /* وضعه في الأسفل */
+            bottom: 1rem; /* مسافة من الأسفل */
+            width: 100%; /* عرض كامل */
+            text-align: center; /* توسيط النص */
+            font-size: 0.875rem; /* حجم خط صغير */
+            color: #a0aec0; /* لون نص رمادي فاتح */
+            opacity: 0; /* مخفي بالبداية */
+            animation: fadeIn 1s ease-out forwards; /* تأثير ظهور */
+            animation-delay: 1.5s; /* تأخير كبير */
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+
+    <div class="container">
+        <h1 id="redirect-heading" class="heading-text text-4xl font-bold mb-6 text-blue-400">
+            <i class="fas fa-spinner fa-spin ml-3"></i> جاري تحويلك إلى الموقع...
+        </h1>
+
+        <div class="spinner" id="main-spinner"></div>
+
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+
+        <p id="redirect-message" class="text-lg mb-4 manual-link-container">
+            إذا لم يتم تحويلك تلقائياً، يرجى الانتظار أو اتبع هذا
+            <a href="main-menu/index.html" class="manual-link">الرابط للصفحة الرئيسية</a>.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Oclock. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // Get DOM elements
+        const redirectHeading = document.getElementById('redirect-heading');
+        const progressBarFill = document.getElementById('progress-bar-fill');
+        const redirectMessage = document.getElementById('redirect-message');
+        const mainSpinner = document.getElementById('main-spinner');
+
+        // Target URL for redirection
+        const targetUrl = 'main-menu/index.html';
+
+        // Duration for the visual progress (in milliseconds)
+        const visualProgressDuration = 4500; // 4.5 seconds (slightly less than meta refresh for smooth transition)
+        let progress = 0; // Current progress percentage
+
+        /**
+         * @function updateProgressBar
+         * @description Updates the visual progress bar and text messages.
+         */
+        function updateProgressBar() {
+            // Increment progress
+            progress += 1;
+
+            // Update the width of the progress bar fill
+            progressBarFill.style.width = `${progress / (visualProgressDuration / 100)}%`;
+
+            // Change heading text based on progress
+            if (progress < 30) {
+                redirectHeading.innerHTML = '<i class="fas fa-spinner fa-spin ml-3"></i> جاري تحويلك إلى الموقع...';
+            } else if (progress < 70) {
+                redirectHeading.innerHTML = '<i class="fas fa-sync-alt fa-spin ml-3"></i> تجهيز المحتوى...';
+            } else {
+                redirectHeading.innerHTML = '<i class="fas fa-check-circle ml-3"></i> اكتمل التحويل...';
+            }
+
+            // If progress is not yet 100%, continue updating
+            if (progress <= (visualProgressDuration / 100)) {
+                setTimeout(updateProgressBar, visualProgressDuration / 100); // Call itself every 100ms
+            } else {
+                // Ensure the progress bar is full at the end
+                progressBarFill.style.width = '100%';
+                // Hide spinner and show final message
+                mainSpinner.style.display = 'none';
+                redirectMessage.style.opacity = '1'; // Ensure manual link is visible
+            }
+        }
+
+        /**
+         * @function startRedirectProcess
+         * @description Initiates the visual redirection process.
+         */
+        function startRedirectProcess() {
+            // Start the progress bar animation
+            updateProgressBar();
+
+            // Fallback JavaScript redirect (in case meta refresh fails or is blocked)
+            setTimeout(() => {
+                window.location.href = targetUrl;
+            }, visualProgressDuration + 500); // A bit after visual progress finishes
+        }
+
+        // Start the process when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', startRedirectProcess);
+
+        // Optional: Handle cases where meta refresh might be blocked by browser settings
+        // This JavaScript redirect acts as a robust fallback.
+    </script>
+</body>
+</html>
